@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2071966</span>
+   &#160;<span id="projectnumber">0.3.0-0c034e6</span>
    </div>
   </td>
  </tr>
@@ -69,6 +69,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="../../d4/db1/classotbr_1_1Ncp_1_1ThreadController-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">otbr::Ncp::ThreadController Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -96,11 +98,214 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRoleHandler</b
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b9fa3a8a4650edbe04a16238efafa0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">GetDeviceRole</a> (DeviceRoleHandler aHandler)=0</td></tr>
 <tr class="separator:a7b9fa3a8a4650edbe04a16238efafa0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8b132b7458047823ec54502f119389a"><td class="memItemLeft" align="right" valign="top">virtual CoprocessorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">GetCoprocessorType</a> (void)=0</td></tr>
+<tr class="separator:aa8b132b7458047823ec54502f119389a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8241bd88d656161ead726284004a98f3"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">GetCoprocessorVersion</a> (void)=0</td></tr>
+<tr class="separator:a8241bd88d656161ead726284004a98f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76136d062ec5dd6a20a218a295ce0d27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">Init</a> (void)=0</td></tr>
+<tr class="separator:a76136d062ec5dd6a20a218a295ce0d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27e8d90fdcd070ebf0ff0937521aa46"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">Deinit</a> (void)=0</td></tr>
+<tr class="separator:ad27e8d90fdcd070ebf0ff0937521aa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed3f7c5397004d36f5a13a00917f912"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">~ThreadController</a> (void)=default</td></tr>
+<tr class="separator:a6ed3f7c5397004d36f5a13a00917f912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a99ad2acadc5745f338532716c7863352"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">ThreadController</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352">Create</a> (const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun, bool aEnableAutoAttach)</td></tr>
+<tr class="separator:a99ad2acadc5745f338532716c7863352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a616f8ee6d1526a84a7cadbe8a91fb980"><td class="memItemLeft" align="right" valign="top"><a id="a616f8ee6d1526a84a7cadbe8a91fb980"></a>
+static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertToOtLogLevel</b> (<a class="el" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel)</td></tr>
+<tr class="separator:a616f8ee6d1526a84a7cadbe8a91fb980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is an interface which provides a set of async APIs to control the Thread network.</p>
 <p>The APIs are unified for both NCP and RCP cases. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6ed3f7c5397004d36f5a13a00917f912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed3f7c5397004d36f5a13a00917f912">&#9670;&nbsp;</a></span>~ThreadController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual otbr::Ncp::ThreadController::~ThreadController </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a99ad2acadc5745f338532716c7863352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99ad2acadc5745f338532716c7863352">&#9670;&nbsp;</a></span>Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">ThreadController</a> &gt; otbr::Ncp::ThreadController::Create </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>aInterfaceName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; const char * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aRadioUrls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>aBackboneInterfaceName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aDryRun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>aEnableAutoAttach</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a Thread Controller Instance.</p>
+<p>This is a factory method that will decide which implementation class will be created.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aInterfaceName</td><td>A string of the Thread interface name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRadioUrls</td><td>The radio URLs (can be IEEE802.15.4 or TREL radio). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aBackboneInterfaceName</td><td>The Backbone network interface name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDryRun</td><td>TRUE to indicate dry-run mode. FALSE otherwise. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aEnableAutoAttach</td><td>Whether or not to automatically attach to the saved network.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-null OpenThread Controller instance. </dd></dl>
+
+</div>
+</div>
+<a id="ad27e8d90fdcd070ebf0ff0937521aa46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27e8d90fdcd070ebf0ff0937521aa46">&#9670;&nbsp;</a></span>Deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Ncp::ThreadController::Deinit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Deinitializes the Thread controller. </p>
+
+<p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ae1852abf36c88840f6199bd7fa78b955">otbr::Ncp::RcpHost</a>.</p>
+
+</div>
+</div>
+<a id="aa8b132b7458047823ec54502f119389a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b132b7458047823ec54502f119389a">&#9670;&nbsp;</a></span>GetCoprocessorType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CoprocessorType otbr::Ncp::ThreadController::GetCoprocessorType </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the co-processor type. </p>
+
+<p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a13506183984ded2c39515e0fc3d81b33">otbr::Ncp::RcpHost</a>.</p>
+
+</div>
+</div>
+<a id="a8241bd88d656161ead726284004a98f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8241bd88d656161ead726284004a98f3">&#9670;&nbsp;</a></span>GetCoprocessorVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* otbr::Ncp::ThreadController::GetCoprocessorVersion </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the co-processor version string. </p>
+
+<p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#ae02340ac02b7e45f0ba8ddbc18bc3cf7">otbr::Ncp::RcpHost</a>.</p>
+
+</div>
+</div>
 <a id="a7b9fa3a8a4650edbe04a16238efafa0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b9fa3a8a4650edbe04a16238efafa0c">&#9670;&nbsp;</a></span>GetDeviceRole()</h2>
 
@@ -136,8 +341,38 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a76136d062ec5dd6a20a218a295ce0d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76136d062ec5dd6a20a218a295ce0d27">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Ncp::ThreadController::Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initializes the Thread controller. </p>
+
+<p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a9252088c8b3c03dc68a1ec14621b7d12">otbr::Ncp::RcpHost</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/ncp/<a class="el" href="../../d2/d98/thread__controller_8hpp_source.html">thread_controller.hpp</a></li>
+<li>src/ncp/thread_controller.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

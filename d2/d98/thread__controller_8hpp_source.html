@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-2071966</span>
+   &#160;<span id="projectnumber">0.3.0-0c034e6</span>
    </div>
   </td>
  </tr>
@@ -102,32 +102,59 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_AGENT_THREAD_CONTROLLER_HPP_</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;openthread/error.h&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;openthread/thread.h&gt;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;lib/spinel/coprocessor_type.h&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/da9/logging_8hpp.html">common/logging.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>otbr {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>Ncp {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">ThreadController</a></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">using</span> DeviceRoleHandler = std::function&lt;void(otError, otDeviceRole)&gt;;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">   67</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">GetDeviceRole</a>(DeviceRoleHandler aHandler) = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <span class="comment">// namespace Ncp</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_THREAD_CONTROLLER_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">otbr::Ncp::ThreadController</a></div><div class="ttdef"><b>Definition:</b> thread_controller.hpp:57</div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;openthread/error.h&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;openthread/thread.h&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;lib/spinel/coprocessor_type.h&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/da9/logging_8hpp.html">common/logging.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>otbr {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>Ncp {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">ThreadController</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">using</span> DeviceRoleHandler = std::function&lt;void(otError, otDeviceRole)&gt;;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> std::unique_ptr&lt;ThreadController&gt; <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352">Create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>                      *aInterfaceName,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                    <span class="keyword">const</span> std::vector&lt;const char *&gt; &amp;aRadioUrls,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                    <span class="keyword">const</span> <span class="keywordtype">char</span>                      *aBackboneInterfaceName,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                    <span class="keywordtype">bool</span>                             aDryRun,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                    <span class="keywordtype">bool</span>                             aEnableAutoAttach);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">   88</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">GetDeviceRole</a>(DeviceRoleHandler aHandler) = 0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">   94</a></span>&#160;    <span class="keyword">virtual</span> CoprocessorType <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">GetCoprocessorType</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">  100</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">GetCoprocessorVersion</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">  106</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">Init</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">  112</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">Deinit</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">  118</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">~ThreadController</a>(<span class="keywordtype">void</span>) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">static</span> otLogLevel ConvertToOtLogLevel(<a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <span class="comment">// namespace Ncp</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_THREAD_CONTROLLER_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">otbr::Ncp::ThreadController</a></div><div class="ttdef"><b>Definition:</b> thread_controller.hpp:58</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a6ed3f7c5397004d36f5a13a00917f912"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">otbr::Ncp::ThreadController::~ThreadController</a></div><div class="ttdeci">virtual ~ThreadController(void)=default</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a76136d062ec5dd6a20a218a295ce0d27"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">otbr::Ncp::ThreadController::Init</a></div><div class="ttdeci">virtual void Init(void)=0</div></div>
 <div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a7b9fa3a8a4650edbe04a16238efafa0c"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">otbr::Ncp::ThreadController::GetDeviceRole</a></div><div class="ttdeci">virtual void GetDeviceRole(DeviceRoleHandler aHandler)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a8241bd88d656161ead726284004a98f3"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">otbr::Ncp::ThreadController::GetCoprocessorVersion</a></div><div class="ttdeci">virtual const char * GetCoprocessorVersion(void)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a99ad2acadc5745f338532716c7863352"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352">otbr::Ncp::ThreadController::Create</a></div><div class="ttdeci">static std::unique_ptr&lt; ThreadController &gt; Create(const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun, bool aEnableAutoAttach)</div><div class="ttdef"><b>Definition:</b> thread_controller.cpp:43</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_aa8b132b7458047823ec54502f119389a"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">otbr::Ncp::ThreadController::GetCoprocessorType</a></div><div class="ttdeci">virtual CoprocessorType GetCoprocessorType(void)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_ad27e8d90fdcd070ebf0ff0937521aa46"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">otbr::Ncp::ThreadController::Deinit</a></div><div class="ttdeci">virtual void Deinit(void)=0</div></div>
 <div class="ttc" id="alogging_8hpp_html"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html">logging.hpp</a></div></div>
+<div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a></div><div class="ttdeci">otbrLogLevel</div><div class="ttdef"><b>Definition:</b> logging.hpp:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
