@@ -7,6 +7,6 @@ var searchData=
   ['_7erestwebserver_909',['~RestWebServer',['../d8/d5d/classotbr_1_1rest_1_1RestWebServer.html#a4d7619b749d7ad20efc8dc9700ff643e',1,'otbr::rest::RestWebServer']]],
   ['_7esha256_910',['~Sha256',['../dd/dcf/group__core-security.html#gae90045abb8e8625ebdbbcd8631878863',1,'otbr::Sha256']]],
   ['_7etaskrunner_911',['~TaskRunner',['../dd/d62/classotbr_1_1TaskRunner.html#a7dedd7137f7bcb25cd8b2ae3dce1fad2',1,'otbr::TaskRunner']]],
-  ['_7ethreadcontroller_912',['~ThreadController',['../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912',1,'otbr::Ncp::ThreadController']]],
+  ['_7ethreadhost_912',['~ThreadHost',['../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aa7f21698ff1121ffca8fb0c9a4528346',1,'otbr::Ncp::ThreadHost']]],
   ['_7ewebserver_913',['~WebServer',['../d6/d83/classotbr_1_1Web_1_1WebServer.html#a8a9328d2362b07f3ebfa40242a84784b',1,'otbr::Web::WebServer']]]
 ];

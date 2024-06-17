@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>openthread-br: src/ncp/thread_controller.hpp Source File</title>
+<title>openthread-br: src/ncp/thread_host.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-299688a</span>
+   &#160;<span id="projectnumber">0.3.0-5349ba1</span>
    </div>
   </td>
  </tr>
@@ -67,10 +67,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">thread_controller.hpp</div>  </div>
+<div class="title">thread_host.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d2/d98/thread__controller_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="../../de/d7b/thread__host_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  Copyright (c) 2024, The OpenThread Authors.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  All rights reserved.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
@@ -98,8 +98,8 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *  POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef OTBR_AGENT_THREAD_CONTROLLER_HPP_</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_AGENT_THREAD_CONTROLLER_HPP_</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef OTBR_AGENT_THREAD_HOST_HPP_</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define OTBR_AGENT_THREAD_HOST_HPP_</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -114,28 +114,28 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>otbr {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span>Ncp {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">ThreadController</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">ThreadHost</a></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">using</span> DeviceRoleHandler = std::function&lt;void(otError, otDeviceRole)&gt;;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> std::unique_ptr&lt;ThreadController&gt; <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352">Create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>                      *aInterfaceName,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                    <span class="keyword">const</span> std::vector&lt;const char *&gt; &amp;aRadioUrls,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                    <span class="keyword">const</span> <span class="keywordtype">char</span>                      *aBackboneInterfaceName,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                    <span class="keywordtype">bool</span>                             aDryRun,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                    <span class="keywordtype">bool</span>                             aEnableAutoAttach);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> std::unique_ptr&lt;ThreadHost&gt; <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a4ecc9e39fb16da42b9b809f2ce5fd4fe">Create</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>                      *aInterfaceName,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                              <span class="keyword">const</span> std::vector&lt;const char *&gt; &amp;aRadioUrls,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                              <span class="keyword">const</span> <span class="keywordtype">char</span>                      *aBackboneInterfaceName,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                              <span class="keywordtype">bool</span>                             aDryRun,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                              <span class="keywordtype">bool</span>                             aEnableAutoAttach);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">   88</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">GetDeviceRole</a>(DeviceRoleHandler aHandler) = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a74e0f723fa45d22231f94c91bf12a6d4">   88</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a74e0f723fa45d22231f94c91bf12a6d4">GetDeviceRole</a>(DeviceRoleHandler aHandler) = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">   94</a></span>&#160;    <span class="keyword">virtual</span> CoprocessorType <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">GetCoprocessorType</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a3a510d42e9e7a4a9406e7cceeda980f9">   94</a></span>&#160;    <span class="keyword">virtual</span> CoprocessorType <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a3a510d42e9e7a4a9406e7cceeda980f9">GetCoprocessorType</a>(<span class="keywordtype">void</span>) = 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">  100</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">GetCoprocessorVersion</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a10281d6e8fe29851742b98a5eade976d">  100</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a10281d6e8fe29851742b98a5eade976d">GetCoprocessorVersion</a>(<span class="keywordtype">void</span>) = 0;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">  106</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">Init</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aaaf355f840fc53cb15b636d7a3783cdd">  106</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aaaf355f840fc53cb15b636d7a3783cdd">Init</a>(<span class="keywordtype">void</span>) = 0;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">  112</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">Deinit</a>(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#ac8cbf3916b97cbd9a79ace92eee61f8a">  112</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#ac8cbf3916b97cbd9a79ace92eee61f8a">Deinit</a>(<span class="keywordtype">void</span>) = 0;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">  118</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">~ThreadController</a>(<span class="keywordtype">void</span>) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aa7f21698ff1121ffca8fb0c9a4528346">  118</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aa7f21698ff1121ffca8fb0c9a4528346">~ThreadHost</a>(<span class="keywordtype">void</span>) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">static</span> otLogLevel ConvertToOtLogLevel(<a class="code" href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a> aLevel);</div>
@@ -144,15 +144,15 @@ $(function() {
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;} <span class="comment">// namespace Ncp</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;} <span class="comment">// namespace otbr</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_THREAD_CONTROLLER_HPP_</span></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html">otbr::Ncp::ThreadController</a></div><div class="ttdef"><b>Definition:</b> thread_controller.hpp:58</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a6ed3f7c5397004d36f5a13a00917f912"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a6ed3f7c5397004d36f5a13a00917f912">otbr::Ncp::ThreadController::~ThreadController</a></div><div class="ttdeci">virtual ~ThreadController(void)=default</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a76136d062ec5dd6a20a218a295ce0d27"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a76136d062ec5dd6a20a218a295ce0d27">otbr::Ncp::ThreadController::Init</a></div><div class="ttdeci">virtual void Init(void)=0</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a7b9fa3a8a4650edbe04a16238efafa0c"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a7b9fa3a8a4650edbe04a16238efafa0c">otbr::Ncp::ThreadController::GetDeviceRole</a></div><div class="ttdeci">virtual void GetDeviceRole(DeviceRoleHandler aHandler)=0</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a8241bd88d656161ead726284004a98f3"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a8241bd88d656161ead726284004a98f3">otbr::Ncp::ThreadController::GetCoprocessorVersion</a></div><div class="ttdeci">virtual const char * GetCoprocessorVersion(void)=0</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_a99ad2acadc5745f338532716c7863352"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352">otbr::Ncp::ThreadController::Create</a></div><div class="ttdeci">static std::unique_ptr&lt; ThreadController &gt; Create(const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun, bool aEnableAutoAttach)</div><div class="ttdef"><b>Definition:</b> thread_controller.cpp:43</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_aa8b132b7458047823ec54502f119389a"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#aa8b132b7458047823ec54502f119389a">otbr::Ncp::ThreadController::GetCoprocessorType</a></div><div class="ttdeci">virtual CoprocessorType GetCoprocessorType(void)=0</div></div>
-<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadController_html_ad27e8d90fdcd070ebf0ff0937521aa46"><div class="ttname"><a href="../../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#ad27e8d90fdcd070ebf0ff0937521aa46">otbr::Ncp::ThreadController::Deinit</a></div><div class="ttdeci">virtual void Deinit(void)=0</div></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_AGENT_THREAD_HOST_HPP_</span></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html">otbr::Ncp::ThreadHost</a></div><div class="ttdef"><b>Definition:</b> thread_host.hpp:58</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_a10281d6e8fe29851742b98a5eade976d"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a10281d6e8fe29851742b98a5eade976d">otbr::Ncp::ThreadHost::GetCoprocessorVersion</a></div><div class="ttdeci">virtual const char * GetCoprocessorVersion(void)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_a3a510d42e9e7a4a9406e7cceeda980f9"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a3a510d42e9e7a4a9406e7cceeda980f9">otbr::Ncp::ThreadHost::GetCoprocessorType</a></div><div class="ttdeci">virtual CoprocessorType GetCoprocessorType(void)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_a4ecc9e39fb16da42b9b809f2ce5fd4fe"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a4ecc9e39fb16da42b9b809f2ce5fd4fe">otbr::Ncp::ThreadHost::Create</a></div><div class="ttdeci">static std::unique_ptr&lt; ThreadHost &gt; Create(const char *aInterfaceName, const std::vector&lt; const char * &gt; &amp;aRadioUrls, const char *aBackboneInterfaceName, bool aDryRun, bool aEnableAutoAttach)</div><div class="ttdef"><b>Definition:</b> thread_host.cpp:43</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_a74e0f723fa45d22231f94c91bf12a6d4"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a74e0f723fa45d22231f94c91bf12a6d4">otbr::Ncp::ThreadHost::GetDeviceRole</a></div><div class="ttdeci">virtual void GetDeviceRole(DeviceRoleHandler aHandler)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_aa7f21698ff1121ffca8fb0c9a4528346"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aa7f21698ff1121ffca8fb0c9a4528346">otbr::Ncp::ThreadHost::~ThreadHost</a></div><div class="ttdeci">virtual ~ThreadHost(void)=default</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_aaaf355f840fc53cb15b636d7a3783cdd"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#aaaf355f840fc53cb15b636d7a3783cdd">otbr::Ncp::ThreadHost::Init</a></div><div class="ttdeci">virtual void Init(void)=0</div></div>
+<div class="ttc" id="aclassotbr_1_1Ncp_1_1ThreadHost_html_ac8cbf3916b97cbd9a79ace92eee61f8a"><div class="ttname"><a href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#ac8cbf3916b97cbd9a79ace92eee61f8a">otbr::Ncp::ThreadHost::Deinit</a></div><div class="ttdeci">virtual void Deinit(void)=0</div></div>
 <div class="ttc" id="alogging_8hpp_html"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html">logging.hpp</a></div></div>
 <div class="ttc" id="alogging_8hpp_html_ada87d1da6f6926eb3d881aae37340f10"><div class="ttname"><a href="../../d0/da9/logging_8hpp.html#ada87d1da6f6926eb3d881aae37340f10">otbrLogLevel</a></div><div class="ttdeci">otbrLogLevel</div><div class="ttdef"><b>Definition:</b> logging.hpp:52</div></div>
 </div><!-- fragment --></div><!-- contents -->

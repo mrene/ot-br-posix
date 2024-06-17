@@ -30,6 +30,6 @@ var searchData=
   ['crc16_61',['Crc16',['../d6/d8f/classotbr_1_1Crc16.html#a5660386f9d83d77b3376d4dc4360a48d',1,'otbr::Crc16::Crc16()'],['../d6/d8f/classotbr_1_1Crc16.html',1,'otbr::Crc16']]],
   ['crc16_2ecpp_62',['crc16.cpp',['../d7/dd9/crc16_8cpp.html',1,'']]],
   ['crc16_2ehpp_63',['crc16.hpp',['../d4/d31/crc16_8hpp.html',1,'']]],
-  ['create_64',['Create',['../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352',1,'otbr::Ncp::ThreadController::Create()'],['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a2dbb88b5800232156357286996e9f163',1,'otbr::Mdns::Publisher::Create()']]],
+  ['create_64',['Create',['../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a4ecc9e39fb16da42b9b809f2ce5fd4fe',1,'otbr::Ncp::ThreadHost::Create()'],['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a2dbb88b5800232156357286996e9f163',1,'otbr::Mdns::Publisher::Create()']]],
   ['cstring2jsonstring_65',['CString2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a720cab2892abff5045282cf7bcc9592a',1,'otbr::rest::Json']]]
 ];

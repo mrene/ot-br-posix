@@ -17,6 +17,6 @@ var searchData=
   ['copyfrom_1174',['CopyFrom',['../d2/dfe/classotbr_1_1Ip6Address.html#a2b0c6e5c8b3ddfaf19d086241a89acd3',1,'otbr::Ip6Address::CopyFrom(const struct sockaddr_in6 &amp;aSockAddr)'],['../d2/dfe/classotbr_1_1Ip6Address.html#aeb7c2b8de4f8a1a15efd0acf0d18ca9c',1,'otbr::Ip6Address::CopyFrom(const struct in6_addr &amp;aIn6Addr)']]],
   ['copyto_1175',['CopyTo',['../d2/dfe/classotbr_1_1Ip6Address.html#af17eb7c1fd8a9c5d54434fbd84c3f173',1,'otbr::Ip6Address::CopyTo(struct sockaddr_in6 &amp;aSockAddr) const'],['../d2/dfe/classotbr_1_1Ip6Address.html#a2edfb162437d6a4c48edd09120193cee',1,'otbr::Ip6Address::CopyTo(struct in6_addr &amp;aIn6Addr) const']]],
   ['crc16_1176',['Crc16',['../d6/d8f/classotbr_1_1Crc16.html#a5660386f9d83d77b3376d4dc4360a48d',1,'otbr::Crc16']]],
-  ['create_1177',['Create',['../de/d53/classotbr_1_1Ncp_1_1ThreadController.html#a99ad2acadc5745f338532716c7863352',1,'otbr::Ncp::ThreadController::Create()'],['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a2dbb88b5800232156357286996e9f163',1,'otbr::Mdns::Publisher::Create()']]],
+  ['create_1177',['Create',['../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a4ecc9e39fb16da42b9b809f2ce5fd4fe',1,'otbr::Ncp::ThreadHost::Create()'],['../da/ddc/classotbr_1_1Mdns_1_1Publisher.html#a2dbb88b5800232156357286996e9f163',1,'otbr::Mdns::Publisher::Create()']]],
   ['cstring2jsonstring_1178',['CString2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a720cab2892abff5045282cf7bcc9592a',1,'otbr::rest::Json']]]
 ];
