@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-f59b0f5</span>
+   &#160;<span id="projectnumber">0.3.0-32a34c1</span>
    </div>
   </td>
  </tr>
@@ -92,12 +92,19 @@ Inheritance diagram for otbr::Ncp::ThreadHost:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a0c472ee90d2abc040a0210f9ad30e2a4"><td class="memItemLeft" align="right" valign="top"><a id="a0c472ee90d2abc040a0210f9ad30e2a4"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>AsyncResultReceiver</b> = std::function&lt; void(otError, const std::string &amp;)&gt;</td></tr>
+<tr class="separator:a0c472ee90d2abc040a0210f9ad30e2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c8612c8ea95e5dd5f9f6684b53a62c"><td class="memItemLeft" align="right" valign="top"><a id="a84c8612c8ea95e5dd5f9f6684b53a62c"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>DeviceRoleHandler</b> = std::function&lt; void(otError, otDeviceRole)&gt;</td></tr>
 <tr class="separator:a84c8612c8ea95e5dd5f9f6684b53a62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a8709af9e81135cd25bfc18a64e9694b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a8709af9e81135cd25bfc18a64e9694b8">Join</a> (const otOperationalDatasetTlvs &amp;aActiveOpDatasetTlvs, const AsyncResultReceiver &amp;aRecevier)=0</td></tr>
+<tr class="separator:a8709af9e81135cd25bfc18a64e9694b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c9fbb1889a7b1f31ddea0981ccbaef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#ab7c9fbb1889a7b1f31ddea0981ccbaef">Leave</a> (const AsyncResultReceiver &amp;aRecevier)=0</td></tr>
+<tr class="separator:ab7c9fbb1889a7b1f31ddea0981ccbaef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a510d42e9e7a4a9406e7cceeda980f9"><td class="memItemLeft" align="right" valign="top">virtual CoprocessorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a3a510d42e9e7a4a9406e7cceeda980f9">GetCoprocessorType</a> (void)=0</td></tr>
 <tr class="separator:a3a510d42e9e7a4a9406e7cceeda980f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10281d6e8fe29851742b98a5eade976d"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d04/classotbr_1_1Ncp_1_1ThreadHost.html#a10281d6e8fe29851742b98a5eade976d">GetCoprocessorVersion</a> (void)=0</td></tr>
@@ -369,6 +376,94 @@ static otLogLevel&#160;</td><td class="memItemRight" valign="bottom"><b>ConvertT
 <p>Initializes the Thread controller. </p>
 
 <p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a9252088c8b3c03dc68a1ec14621b7d12">otbr::Ncp::RcpHost</a>, and <a class="el" href="../../d2/d1c/classotbr_1_1Ncp_1_1NcpHost.html#af91ea64407d0fd45222d133ed1d26721">otbr::Ncp::NcpHost</a>.</p>
+
+</div>
+</div>
+<a id="a8709af9e81135cd25bfc18a64e9694b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8709af9e81135cd25bfc18a64e9694b8">&#9670;&nbsp;</a></span>Join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Ncp::ThreadHost::Join </td>
+          <td>(</td>
+          <td class="paramtype">const otOperationalDatasetTlvs &amp;&#160;</td>
+          <td class="paramname"><em>aActiveOpDatasetTlvs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const AsyncResultReceiver &amp;&#160;</td>
+          <td class="paramname"><em>aRecevier</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method joins this device to the network specified by <code>aActiveOpDatasetTlvs</code>.</p>
+<p>If there is an ongoing 'Join' operation, no action will be taken and <code>aReceiver</code> will be called after the request is completed. The previous <code>aReceiver</code> will also be called.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aActiveOpDatasetTlvs</td><td>A reference to the active operational dataset of the Thread network. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aReceiver</td><td>A receiver to get the async result of this operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a3a0f00ff6ac41d7b1546cf46f561df0b">otbr::Ncp::RcpHost</a>, and <a class="el" href="../../d2/d1c/classotbr_1_1Ncp_1_1NcpHost.html#a256706fb4109f21d6ed08aeebd8b788d">otbr::Ncp::NcpHost</a>.</p>
+
+</div>
+</div>
+<a id="ab7c9fbb1889a7b1f31ddea0981ccbaef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7c9fbb1889a7b1f31ddea0981ccbaef">&#9670;&nbsp;</a></span>Leave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void otbr::Ncp::ThreadHost::Leave </td>
+          <td>(</td>
+          <td class="paramtype">const AsyncResultReceiver &amp;&#160;</td>
+          <td class="paramname"><em>aRecevier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This method instructs the device to leave the current network gracefully.</p>
+<ol type="1">
+<li>If there is already an ongoing 'Leave' operation, no action will be taken and <code>aReceiver</code> will be called after the previous request is completed. The previous <code>aReceiver</code> will also be called.</li>
+<li>If this device is not in disabled state, OTBR sends Address Release Notification (i.e. ADDR_REL.ntf) to gracefully detach from the current network and it takes 1 second to finish.</li>
+<li>Then Operational Dataset will be removed from persistent storage.</li>
+<li>If everything goes fine, <code>aReceiver</code> will be invoked with OT_ERROR_NONE. Otherwise, other errors will be passed to <code>aReceiver</code> when the error happens.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aReceiver</td><td>A receiver to get the async result of this operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../dd/d09/classotbr_1_1Ncp_1_1RcpHost.html#a1c9c613f851efd44feafad2a0a71239a">otbr::Ncp::RcpHost</a>, and <a class="el" href="../../d2/d1c/classotbr_1_1Ncp_1_1NcpHost.html#a4d952014815c0e074a493a1859f3bb6d">otbr::Ncp::NcpHost</a>.</p>
 
 </div>
 </div>

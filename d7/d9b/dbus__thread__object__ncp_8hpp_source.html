@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">openthread-br
-   &#160;<span id="projectnumber">0.3.0-f59b0f5</span>
+   &#160;<span id="projectnumber">0.3.0-32a34c1</span>
    </div>
   </td>
  </tr>
@@ -125,13 +125,16 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> AsyncGetDeviceRoleHandler(<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> ReplyAsyncGetProperty(<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest, <span class="keyword">const</span> std::string &amp;aContent);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../d2/d1c/classotbr_1_1Ncp_1_1NcpHost.html">otbr::Ncp::NcpHost</a> &amp;mHost;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> JoinHandler(<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> LeaveHandler(<a class="code" href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">DBusRequest</a> &amp;aRequest);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace DBus</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace otbr</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_THREAD_OBJECT_NCP_HPP_</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../d2/d1c/classotbr_1_1Ncp_1_1NcpHost.html">otbr::Ncp::NcpHost</a> &amp;mHost;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace DBus</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace otbr</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// OTBR_DBUS_THREAD_OBJECT_NCP_HPP_</span></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusObject_html"><div class="ttname"><a href="../../da/d4d/classotbr_1_1DBus_1_1DBusObject.html">otbr::DBus::DBusObject</a></div><div class="ttdef"><b>Definition:</b> dbus_object.hpp:66</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusRequest_html"><div class="ttname"><a href="../../d0/d92/classotbr_1_1DBus_1_1DBusRequest.html">otbr::DBus::DBusRequest</a></div><div class="ttdef"><b>Definition:</b> dbus_request.hpp:59</div></div>
 <div class="ttc" id="aclassotbr_1_1DBus_1_1DBusThreadObjectNcp_html"><div class="ttname"><a href="../../d7/dda/classotbr_1_1DBus_1_1DBusThreadObjectNcp.html">otbr::DBus::DBusThreadObjectNcp</a></div><div class="ttdef"><b>Definition:</b> dbus_thread_object_ncp.hpp:61</div></div>
